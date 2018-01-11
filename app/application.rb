@@ -1,6 +1,7 @@
 class Application
 
-  @@item = []
+  @@items = []
+  binding.pry
 
   def call(env)
     resp = Rack::Response.new
