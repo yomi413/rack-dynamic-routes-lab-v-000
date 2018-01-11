@@ -7,14 +7,9 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      item = req.path.split("/item/").last
-      if @@items.include?(item)
-        @@items.each do |item|
-
-
-          resp.write "(item[0][1])\n"
-        end
-      # end
+      item_name = req.path.split("/item/").last
+      if item = @@items.find{|i| i.name == item_name}
+        resp.write item.price
       else
         resp.write "Item not found"
         resp.status = 400
