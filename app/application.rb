@@ -8,10 +8,6 @@ class Application
 
     if req.path.match(/items/)
       @@items.each do |item|
-        if !item.include?(name: "Apples")
-          resp.write "Item not found"
-          resp.status = 400
-        end
       resp.write "#{item.price}\n"
     end
     # elsif !@@items.include?(item)
