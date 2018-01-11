@@ -10,7 +10,7 @@ class Application
       @@items.each do |item|
       resp.write "#{item.price}\n"
     end
-  elsif !@@items.include?(item)
+    elsif !@@items.include?(item)
       resp.write "Item not found"
       resp.status = 400
     else
