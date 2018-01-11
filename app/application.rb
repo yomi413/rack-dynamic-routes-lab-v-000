@@ -6,18 +6,22 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    @@items.each do |item|
+    if @@items.each do |item|
       resp.write "#{item.price}\n"
+    else
+      resp.write "Route not found"
+      resp.status = 404
+    end
 
     # @@items.each do |item|
     #   @@items << Item.new(item.name, item.price)
     #
-    #   if req.path.match == (/item/)
-    #     resp.write "#{item.price}"
-    #   else
-    #     resp.write "Route not found"
-    #     resp.status = 404
-    #   end
+      # if req.path.match(/item/)
+      #   resp.write "#{item.price}"
+      # else
+      #   resp.write "Route not found"
+      #   resp.status = 404
+      # end
     end
 
     resp.finish
