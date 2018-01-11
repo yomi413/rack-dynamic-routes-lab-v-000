@@ -10,7 +10,7 @@ class Application
       @@items.each do |item|
         # @@items << (item.name, item.price)
         # item_name = req.path.split("/items/")
-        resp.write "#{item}\n"
+        resp.write "#{item.price}\n"
       end
     # if req.path.match(/items/)
     #   item_name = req.path.split("/items/").last
