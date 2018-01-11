@@ -11,6 +11,7 @@ class Application
       if @@items.include?(item)
         @@items.each do |item|
         resp.write "#{item}\n"
+        end
       else
         resp.write "Item not found"
         resp.status = 400
