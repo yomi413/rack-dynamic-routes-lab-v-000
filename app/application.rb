@@ -9,8 +9,10 @@ class Application
     if req.path.match(/items/)
       item = req.params["item"]
       if @@items.include?(item)
+        @@items.each do |item|
 
-        resp.write "#{item_price}\n"
+          resp.write "#{item.price}\n"
+        end
       # end
       else
         resp.write "Item not found"
