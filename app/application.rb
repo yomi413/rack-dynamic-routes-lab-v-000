@@ -10,7 +10,7 @@ class Application
       @@items << Item.new(item.name, item.price)
 
       if req.path.match == (/item/)
-        resp.write "#{item.name}, #{item.price}"
+        resp.write "#{item.price}"
       else
         resp.write "Route not found"
         resp.status = 404
