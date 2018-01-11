@@ -6,5 +6,5 @@ class application
 
     
   end
-  
+
 end
