@@ -8,11 +8,15 @@ class Application
 
     if req.path.match(/items/)
       @@items.each do |item|
+        if !item.include?
+          resp.write "Item not found"
+          resp.status = 400
+        end
       resp.write "#{item.price}\n"
     end
-    elsif !@@items.include?(item)
-      resp.write "Item not found"
-      resp.status = 400
+    # elsif !@@items.include?(item)
+    #   resp.write "Item not found"
+    #   resp.status = 400
     else
       resp.write "Route not found"
       resp.status = 404
