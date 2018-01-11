@@ -10,8 +10,9 @@ class Application
       item = req.params["item"]
       if @@items.include?(item)
         @@items.each do |item|
+          
 
-          resp.write "#{item.price}\n"
+          resp.write "(item[0][1])\n"
         end
       # end
       else
