@@ -6,6 +6,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
+    @@items = 
+
     if req.path == "/item"
       resp.write ""
     else
