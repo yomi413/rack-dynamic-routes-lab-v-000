@@ -12,8 +12,8 @@ class Application
         @@items.each do |item|
           item.each.with_index(1) do |existing_item, index|
             item_price = existing_item[1]
-
-        resp.write "#{item_price}\n"
+            resp.write "#{item_price}\n"
+          end
         end
       else
         resp.write "Item not found"
