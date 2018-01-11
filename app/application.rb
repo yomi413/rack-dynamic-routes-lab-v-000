@@ -7,6 +7,9 @@ class Application
     req = Rack::Request.new(env)
 
     @@items.each do |item|
+      resp.write "#{item.price}\n"
+
+    @@items.each do |item|
       @@items << Item.new(item.name, item.price)
 
       if req.path.match == (/item/)
