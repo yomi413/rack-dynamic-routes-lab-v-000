@@ -11,7 +11,7 @@ class Application
       if @@items.include?(item)
 
         resp.write "#{item_price}\n"
-      # end
+      end
       else
         resp.write "Item not found"
         resp.status = 400
