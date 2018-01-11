@@ -12,7 +12,7 @@ class Application
         # item_name = req.path.split("/items/")
         resp.write "#{item.price}\n"
       end
-      if @@items.exists?
+      if Item.exists?(:name => "Apples")
         resp.write @@items
       else
     # if req.path.match(/items/)
