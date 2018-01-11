@@ -9,6 +9,7 @@ class Application
 
 
     @@items.each do |item|
+      @@items << Item.new(item.name, item.price)
 
       if req.path == "/item"
         resp.write "#{item.price}"
