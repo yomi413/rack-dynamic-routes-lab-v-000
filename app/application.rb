@@ -10,7 +10,10 @@ class Application
       item = req.params["item"]
       if @@items.include?(item)
         @@items.each do |item|
-        resp.write "#{item.price}\n"
+          item.each.with_index(1) do |existing_item, index|
+            item_price = existing_item[1]
+
+        resp.write "#{item_price}\n"
         end
       else
         resp.write "Item not found"
