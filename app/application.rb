@@ -17,7 +17,7 @@ class Application
 
       # if req.path == "/items"
       #   resp.write "Item not found"
-    elsif items.empty?
+    elsif @@items.empty?
       resp.write "Item not found"
       resp.status = 400
     else
