@@ -12,18 +12,9 @@ class Application
         # item_name = req.path.split("/items/")
         resp.write "#{item.price}\n"
       end
-      if !Item.exists?(:name => item.name)
-        resp.write @@items
-      else
-    # if req.path.match(/items/)
-    #   item_name = req.path.split("/items/").last
-    #   item = @@items.find{|i| i.name == item_name}
-    #   resp.write "#{item.price}"
-    #   if @@items
-        resp.write "Item not found"
-        resp.status = 400
-      end
-
+    elsif !Item.exists?
+      resp.write "Item not found"
+      resp.status = 400
     else
       resp.write "Route not found"
       resp.status = 404
